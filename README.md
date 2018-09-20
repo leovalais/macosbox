@@ -1,10 +1,7 @@
-applecolors
+macosbox
 ===========
 
-The package `applecolors` defines the colors found in
-the following places of the Apple Human Interface Guidlines (for macOS, iOS and
-watchOS):
+The package `macosbox` defines `tcolobox`es that look like macOS Mojave's windows.
 
-- https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/color/
-- https://developer.apple.com/design/human-interface-guidelines/watchos/visual-design/color/
-- https://developer.apple.com/design/human-interface-guidelines/macos/visual-design/color/
+It defines light and dark windows which can contain `minted` code snippets with
+a box-specific theme.
