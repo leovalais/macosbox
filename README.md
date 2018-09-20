@@ -9,4 +9,4 @@ a box-specific theme.
 demo
 ====
 
-A demo can be found in [https://github.com/leovalais/macosbox/blob/master/demo.pdf][demo.pdf].
+A demo can be found in [https://github.com/leovalais/macosbox/blob/master/demo.pdf](demo.pdf).
