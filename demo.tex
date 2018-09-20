@@ -1,0 +1,132 @@
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[scaled]{helvet}
+\renewcommand\familydefault{\sfdefault}
+\usepackage[T1]{fontenc}
+\usepackage{minted}
+\usepackage{macosbox}
+
+\title{Demo of \texttt{macosbox}}
+\author{Léo Valais}
+\date\today
+
+\usemintedstyle{colorful}
+\usemacosboxmintedstyle{xcode}
+\usemacosboxdarkmintedstyle{monokai}
+
+\newminted{latex}{linenos}
+
+\newcommand{\code}[1][Code]{\medskip\underline{\textit{\large{}#1:}}}
+
+\begin{document}
+\maketitle
+
+\section{Light boxes}
+\subsection{Simple box}
+\begin{macosbox}{A macOS window-like \texttt{tcolorbox}}
+  Aenean in sem ac leo mollis blandit.
+  Pellentesque tristique imperdiet tortor.
+  Donec vitae dolor.
+\end{macosbox}
+
+\code
+\begin{latexcode}
+\begin{macosbox}{A macOS window-like \texttt{tcolorbox}}
+  Aenean in sem ac leo mollis blandit.
+  Pellentesque tristique imperdiet tortor.
+  Donec vitae dolor.
+\end{macosbox}
+\end{latexcode}
+
+\subsection{Box containing code}
+A \texttt{macosbox} can contain code with a different syntax highlighting style. For
+instace, this document begins with:
+\begin{latexcode}
+\usemintedstyle{colorful}
+\usemacosboxmintedstyle{xcode}
+\end{latexcode}
+It means that in this document, the \texttt{colorful} style is used but inside \texttt{macosbox}es,
+the \texttt{xcode} style is used instead. \textit{Only \texttt{minted} is supported (not \texttt{listings} or any other).}
+
+Default value: \texttt{xcode}.
+
+\texttt{minted} is not a requirement for \texttt{macosbox}. If \texttt{minted} is
+imported this feature will enable automatically.
+
+\begin{macosbox}{A box containing code}
+\begin{minted}{common-lisp}
+(defun ! (n)
+  (if (zerop n)
+      0
+      (* n (! (1- n)))))
+\end{minted}
+\end{macosbox}
+
+\code
+\begin{latexcode}
+\begin{macosbox}{A box containing code}
+\begin{minted}{common-lisp}
+(defun ! (n)
+  (if (zerop n)
+      0
+      (* n (! (1- n)))))
+\end{minted}
+\end{macosbox}
+\end{latexcode}
+
+\section{Dark boxes}
+\subsection{Simple box}
+\begin{macosdarkbox}{A dark box}
+  This is a dark box with the colors of macOS Mojave.
+\end{macosdarkbox}
+
+\code
+\begin{latexcode}
+\begin{macosdarkbox}{A dark box}
+  This is a dark box with the colors of macOS Mojave.
+\end{macosdarkbox}
+\end{latexcode}
+
+\subsection{Dark box containing code}
+Likewise, the \texttt{minted} theme inside dark boxes can be chosen using:
+
+\begin{latexcode}
+\usemacosboxdarkmintedstyle{monokai}
+\end{latexcode}
+
+Default value: \texttt{monokai}.
+
+\begin{macosdarkbox}{A dark box containing code}
+\begin{minted}{c}
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+  printf("hello, world\n");
+  return EXIT_SUCCESS;
+}
+\end{minted}
+\end{macosdarkbox}
+
+\code
+\begin{latexcode}
+\begin{macosdarkbox}{A dark box containing code}
+\begin{minted}{c}
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+  printf("hello, world\n");
+  return EXIT_SUCCESS;
+}
+\end{minted}
+\end{macosdarkbox}
+\end{latexcode}
+
+\section{About this package}
+This package was originally designed to make popups in beamer presentations that
+look like macOS windows.
+
+Nevertheless, this package still works inside classic \LaTeX{} documents.
+
+\end{document}
